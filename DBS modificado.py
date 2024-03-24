@@ -119,15 +119,24 @@ R = R[(m - o_size) // 2: (m + o_size) // 2, (m - o_size) // 2 + bs: (m + o_size)
 
 Rf = torch.angle(R)
 Rf = (Rf + torch.pi) / (2 * torch.pi)
+Rf = Rf * 255
 
-R = R.abs()
+R = torch.abs(R)
+R = R / torch.max(R) * 255
 
 #Muestra la amplitud y fase final
-plt.imshow(R.cpu(), cmap = 'gray')
+plt.imshow(R, cmap = 'gray')
 plt.title("Amplitud")
 plt.show()
 
-plt.imshow(Rf.cpu(), cmap = 'gray')
+plt.imshow(Rf, cmap = 'gray')
 plt.title("Fase")
-plt.show()
+plt.show()                                          
 
+R = np.asarray(R)
+R = im.fromarray(R).convert('L')
+R.save("".join(["Resultados modificado/", Modo, str(iter), "Iter_Amplitud.png"]))
+
+Rf = np.asarray(Rf)
+Rf = im.fromarray(Rf).convert('L')
+Rf.save("".join(["Resultados modificado/", Modo, str(iter), "Iter_Fase.png"]))
