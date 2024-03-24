@@ -13,3 +13,7 @@ proyectar original.py es el código que toma los hologramas generados por DBS or
 proyectar modificado.py es el código que toma los hologramas generados por DBS Modificado.py y muestra su amplitud y fase, y guarda las reconstrucciones en la carpeta Resultados Modificado.
 
 Las gráficas generadas para la presentación y el artículo se muestran en la carpeta Figuras 
+
+Por último están el artículo y las diapositivas de la presentación para el proyecto.
+
+
